@@ -23,3 +23,5 @@ C:\Users\Admin\source\repos\ProtocolForge\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\Admin\source\repos\ProtocolForge\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\Admin\source\repos\ProtocolForge\obj\Debug\App.baml
 C:\Users\Admin\source\repos\ProtocolForge\obj\Debug\ProtocolForge.csproj.CopyComplete
+C:\Users\Admin\source\repos\ProtocolForge\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\ProtocolForge\bin\Debug\Newtonsoft.Json.xml

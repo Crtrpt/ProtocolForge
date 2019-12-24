@@ -39,16 +39,24 @@
                     <Fluent:BackstageTabControl>
                         <Fluent:BackstageTabItem Header="New" />
                         <Fluent:BackstageTabItem Header="Exit" />
+                        <Fluent:BackstageTabItem Header="Login" />
                     </Fluent:BackstageTabControl>
                 </Fluent:Backstage>
             </Fluent:Ribbon.Menu>
 
             <!--Tabs-->
-            <Fluent:RibbonTabItem Header="TCP">
+            <Fluent:RibbonTabItem Header="TCP/IP">
+                
                 <Fluent:RibbonGroupBox>
                     <Fluent:Button Header="TCP服务器" Click="Button_Click" />
                     <Fluent:Button Header="TCP客户端" Click="Button_Click"  />
                 </Fluent:RibbonGroupBox>
+                
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="远程TCP服务器" Click="Button_Click" />
+                    <Fluent:Button Header="远程TCP客户端" Click="Button_Click"  />
+                </Fluent:RibbonGroupBox>
+                
             </Fluent:RibbonTabItem>
 
             <Fluent:RibbonTabItem Header="UDP">
@@ -72,10 +80,23 @@
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
 
+            <Fluent:RibbonTabItem Header="WEBSOCKET">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="WEBSOCKET服务器" />
+                    <Fluent:Button Header="WEBSOCKET客户端" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
             <Fluent:RibbonTabItem Header="COAP">
                 <Fluent:RibbonGroupBox>
                     <Fluent:Button Header="COAP服务器" />
                     <Fluent:Button Header="COAP客户端" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <Fluent:RibbonTabItem Header="Serial">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="虚拟COM口" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
 

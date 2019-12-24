@@ -1,12 +1,91 @@
-﻿<Window x:Class="ProtocolForge.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProtocolForge"
-        mc:Ignorable="d"
-        Title="ProtocolForge" Height="450" Width="800">
+﻿<Fluent:RibbonWindow x:Class="ProtocolForge.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:Fluent="urn:fluent-ribbon"
+                     Title="ProtocolForge" 
+                     Width="800" 
+                     Height="600">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Fluent:Ribbon Grid.Row="0">
+            <Fluent:Ribbon.StartScreen>
+                <Fluent:StartScreen x:Name="startScreen" IsOpen="True">
+                    <Fluent:StartScreenTabControl>
+                        <Fluent:StartScreenTabControl.LeftContent>
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="ProtocolForge"
+                                       FontSize="30"
+                                       Foreground="{DynamicResource WhiteBrush}" />
+                            </StackPanel>
+                        </Fluent:StartScreenTabControl.LeftContent>
+
+                        <Fluent:StartScreenTabControl.RightContent>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock VerticalAlignment="Center"
+                                           HorizontalAlignment="Center">You can close the start screen by either clicking the button below or by pressing ESC</TextBlock>
+                            </StackPanel>
+                        </Fluent:StartScreenTabControl.RightContent>
+                    </Fluent:StartScreenTabControl>
+                </Fluent:StartScreen>
+            </Fluent:Ribbon.StartScreen>
+
+            <!--Backstage-->
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage>
+                    <Fluent:BackstageTabControl>
+                        <Fluent:BackstageTabItem Header="New" />
+                        <Fluent:BackstageTabItem Header="Exit" />
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>
+
+            <!--Tabs-->
+            <Fluent:RibbonTabItem Header="TCP">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="TCP服务器" Click="Button_Click" />
+                    <Fluent:Button Header="TCP客户端" Click="Button_Click"  />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <Fluent:RibbonTabItem Header="UDP">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="UDP服务器" />
+                    <Fluent:Button Header="UDP客户端"  />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <Fluent:RibbonTabItem Header="MQTT">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="MQTT服务器" />
+                    <Fluent:Button Header="MQTT客户端"  />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <Fluent:RibbonTabItem Header="HTTP">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="HTTP服务器" />
+                    <Fluent:Button Header="HTTP客户端" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <Fluent:RibbonTabItem Header="COAP">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="COAP服务器" />
+                    <Fluent:Button Header="COAP客户端" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+        </Fluent:Ribbon>
+            
         
+        
+        
+
     </Grid>
-</Window>
+    
+</Fluent:RibbonWindow>
+    

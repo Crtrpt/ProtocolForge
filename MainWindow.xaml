@@ -4,11 +4,12 @@
                      xmlns:Fluent="urn:fluent-ribbon"
                      Title="ProtocolForge" 
                      Width="800" 
-                     Height="600">
+                     Height="600" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="SingleBorderWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Fluent:Ribbon Grid.Row="0">
@@ -40,73 +41,132 @@
                         <Fluent:BackstageTabItem Header="New" />
                         <Fluent:BackstageTabItem Header="Exit" />
                         <Fluent:BackstageTabItem Header="Login" />
+                        <Fluent:BackstageTabItem Header="Help" />
                     </Fluent:BackstageTabControl>
                 </Fluent:Backstage>
             </Fluent:Ribbon.Menu>
 
             <!--Tabs-->
             <Fluent:RibbonTabItem Header="TCP/IP">
-                
+
                 <Fluent:RibbonGroupBox>
-                    <Fluent:Button Header="TCP服务器" Click="Button_Click" />
-                    <Fluent:Button Header="TCP客户端" Click="Button_Click"  />
+                    <Fluent:Button Header="TCP服务器" Click="Button_Click_TCP_SERVER" />
+                    <Fluent:Button Header="TCP客户端" Click="Button_Click_TCP_CLIENT"  />
+                    <Fluent:Button Header="UDP服务器" Click="Button_Click_UDP_SERVER" />
+                    <Fluent:Button Header="UDP客户端" Click="Button_Click_UDP_CLIENT"  />
                 </Fluent:RibbonGroupBox>
-                
+
                 <Fluent:RibbonGroupBox>
+                    <Fluent:Button Header="文档" Click="Button_Help" />
+                    <Fluent:Button Header="显示编码" Click="Button_Help" />
+                </Fluent:RibbonGroupBox>
+
+                <!--<Fluent:RibbonGroupBox>
                     <Fluent:Button Header="远程TCP服务器" Click="Button_Click" />
                     <Fluent:Button Header="远程TCP客户端" Click="Button_Click"  />
-                </Fluent:RibbonGroupBox>
-                
+                </Fluent:RibbonGroupBox>-->
+
+
             </Fluent:RibbonTabItem>
 
-            <Fluent:RibbonTabItem Header="UDP">
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Header="UDP服务器" />
-                    <Fluent:Button Header="UDP客户端"  />
+            <Fluent:RibbonTabItem Header="控制">
+                <Fluent:RibbonGroupBox Header="输出区">
+                    <Fluent:Button Header="进制" Click="Button_Help" />
+                    <Fluent:Button Header="显示编码" Click="Button_Help" />
+                    <Fluent:Button Header="发送文件" Click="Button_Help" />
+                    <Fluent:Button Header="定时发送" Click="Button_Help" />
+                    <Fluent:Button Header="发送" Click="Button_Help" />
                 </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
 
-            <Fluent:RibbonTabItem Header="MQTT">
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Header="MQTT服务器" />
-                    <Fluent:Button Header="MQTT客户端"  />
+                <Fluent:RibbonGroupBox Header="输入区">
+                    <Fluent:Button Header="进制" Click="Button_Help" />
+                    <Fluent:Button Header="帮助" Click="Button_Help" />
                 </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
 
-            <Fluent:RibbonTabItem Header="HTTP">
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Header="HTTP服务器" />
-                    <Fluent:Button Header="HTTP客户端" />
+                <Fluent:RibbonGroupBox Header="帮助区">
+                    <Fluent:Button Header="文档" Click="Button_Help" />
+                    <Fluent:Button Header="显示编码" Click="Button_Help" />
                 </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
 
-            <Fluent:RibbonTabItem Header="WEBSOCKET">
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Header="WEBSOCKET服务器" />
-                    <Fluent:Button Header="WEBSOCKET客户端" />
-                </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
-
-            <Fluent:RibbonTabItem Header="COAP">
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Header="COAP服务器" />
-                    <Fluent:Button Header="COAP客户端" />
-                </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
-
-            <Fluent:RibbonTabItem Header="Serial">
-                <Fluent:RibbonGroupBox>
-                    <Fluent:Button Header="虚拟COM口" />
-                </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
 
         </Fluent:Ribbon>
-            
-        
-        
-        
 
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="180" />
+            </Grid.ColumnDefinitions>
+
+            <TreeView Name="TreeView1" BorderThickness="0">
+                <TreeViewItem Header="TCP客户端" IsExpanded="False">
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="TCP服务器端" IsExpanded="False">
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                    <TreeViewItem Header="127.0.0.1:8001"></TreeViewItem>
+                </TreeViewItem>
+            </TreeView>
+
+            <GridSplitter Grid.Column="1" Width="1" HorizontalAlignment="Stretch" />
+            <Grid Grid.Column="2" Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*" />
+                    <RowDefinition  Height="5" />
+                    <RowDefinition  Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel >
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                </StackPanel>
+
+                <GridSplitter Grid.Row="1" Height="1" HorizontalAlignment="Stretch" />
+                <StackPanel Margin="0,0,0,0" Grid.Row="2">
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                    <RichTextBox Height="auto"  BorderThickness="0,0,0,1" Margin="0,0,0,0"/>
+                </StackPanel>
+            </Grid>
+            <GridSplitter Grid.Column="3" Width="1" HorizontalAlignment="Stretch"  />
+            <ListView  Grid.Column="4" BorderThickness="0" />
+        </Grid>
+
+        <Fluent:StatusBar Grid.Row="3">
+            <Fluent:StatusBarItem Title="Left placed item"
+                          Value="150"
+                          HorizontalAlignment="Left">
+                <TextBlock Text="150 px" />
+            </Fluent:StatusBarItem>
+
+            <Separator HorizontalAlignment="Left" />
+
+            <Fluent:StatusBarItem Title="Second left placed item"
+                          Value="Value shown in ContextMenu"
+                          ToolTip="Your ToolTip"
+                          Content="Content shown in StatusBar"
+                          HorizontalAlignment="Left" />
+
+            <Fluent:StatusBarItem Title="Item placed on the right side"
+                          HorizontalAlignment="Right"
+                          Value="Your value which is also used as content if no content is set." />
+        </Fluent:StatusBar>
     </Grid>
-    
+
 </Fluent:RibbonWindow>
     

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using ProtocolForge.windows;
 
 namespace ProtocolForge
 {
@@ -10,16 +11,42 @@ namespace ProtocolForge
         public MainWindow()
         {
             this.InitializeComponent();
+            this.WindowStartupLocation= WindowStartupLocation.CenterScreen;
         }
 
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void Button_Click_TCP_SERVER(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("创建TCP服务器");
+            TcpServer TcpServer = new TcpServer();
+            TcpServer.ShowDialog();
         }
 
-        private void Button_Click_1(object sender, System.Windows.RoutedEventArgs e)
+        private void Button_Click_TCP_CLIENT(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("创建TCP客户端");
+            TcpClient TcpClient = new TcpClient();
+            TcpClient.ShowDialog();
+        }
+
+
+        private void Button_Click_UDP_SERVER(object sender, RoutedEventArgs e)
+        {
+            UdpServer udpServer = new UdpServer();
+            udpServer.ShowDialog();
+        }
+
+        private void Button_Click_UDP_CLIENT(object sender, RoutedEventArgs e)
+        {
+            UdpClient udpClient = new UdpClient();
+            udpClient.ShowDialog();
+        }
+
+        private void Button_Help(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("跳转TCPIP的帮助论坛");
+        }
+
+        private void Border_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
         }
     }
 }

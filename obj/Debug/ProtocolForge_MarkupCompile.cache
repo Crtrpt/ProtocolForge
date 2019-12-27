@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Admin\source\repos\ProtocolForge\App.xaml
-11151548125
-
-5-2017746502
-22-1237056563
-MainWindow.xaml;
+61006109036
+2-865652846
+10-243060948
+26529037918
+AddTcpServer.xaml;MainWindow.xaml;windows\TcpClient.xaml;windows\TcpServer.xaml;windows\UdpClient.xaml;windows\UdpServer.xaml;
 
 False
 

@@ -1,8 +1,20 @@
 ﻿
 FC:\Users\Admin\source\repos\ProtocolForge\App.xaml;;
-FC:\Users\Admin\source\repos\ProtocolForge\AddTcpServer.xaml;;
-FC:\Users\Admin\source\repos\ProtocolForge\windows\TcpClient.xaml;;
-FC:\Users\Admin\source\repos\ProtocolForge\windows\TcpServer.xaml;;
-FC:\Users\Admin\source\repos\ProtocolForge\windows\UdpClient.xaml;;
-FC:\Users\Admin\source\repos\ProtocolForge\windows\UdpServer.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\COAP\CoapClient.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\COAP\CoapServer.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\HTTP2\Http2Client.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\HTTP2\Http2Server.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\HTTP\HttpClient.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\HTTP\HttpServer.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\MQTT\MqttClient.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\Tcp\page\TcpClientPage.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\Tcp\TcpClient.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\Websocket\WebSocketClient.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\MQTT\MqttServer.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\Websocket\WebSocketServer.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\Tcp\TcpServer.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\Udp\UdpClient.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\Protocol\Udp\UdpServer.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\View\Config\ConfigPage.xaml;;
+FC:\Users\Admin\source\repos\ProtocolForge\View\Startup\Startup.xaml;;
 

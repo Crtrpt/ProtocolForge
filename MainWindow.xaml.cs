@@ -1,5 +1,14 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Forms;
+using ProtocolForge.Model;
+using ProtocolForge.Protocol.Tcp.page;
+using ProtocolForge.View.Startup;
 using ProtocolForge.windows;
+using TcpClient = ProtocolForge.windows.TcpClient;
 
 namespace ProtocolForge
 {
@@ -8,10 +17,57 @@ namespace ProtocolForge
     /// </summary>
     public partial class MainWindow
     {
+        public IList<Connect> connectList;
+
+        NotifyIcon nIcon = new NotifyIcon();
+
+        public void exit() {
+            App.Current.Shutdown();
+        }
+        public void icon() {
+            this.nIcon.Icon = new Icon("./Resources/tray.ico");
+            this.nIcon.Visible = true;
+            nIcon.Click += iconClick;
+
+            System.Windows.Forms.ContextMenu menu = new System.Windows.Forms.ContextMenu();
+
+            System.Windows.Forms.MenuItem closeItem = new System.Windows.Forms.MenuItem();
+            closeItem.Text = "Close";
+            closeItem.Click += new EventHandler(delegate {
+                exit();
+            });
+
+            System.Windows.Forms.MenuItem addItem = new System.Windows.Forms.MenuItem();
+            addItem.Text = "Menu";
+
+            menu.MenuItems.Add(addItem);
+            menu.MenuItems.Add(closeItem);
+
+            nIcon.ContextMenu = menu;
+        }
+
+        private void iconClick(object sender, EventArgs e)
+        {
+            this.WindowState = WindowState.Normal;
+        }
+
+
+
+        internal void gotoPage(string v)
+        {
+            this.MainPage.Navigate(new Uri(v, UriKind.Relative));
+        }
+
+
         public MainWindow()
         {
             this.InitializeComponent();
             this.WindowStartupLocation= WindowStartupLocation.CenterScreen;
+            this.icon();
+            this.TreeView1.ItemsSource = connectList;
+            Startup p = new Startup();
+            p.parentWindows = this;
+            this.MainPage.Content = p;
         }
 
         private void Button_Click_TCP_SERVER(object sender, RoutedEventArgs e)
@@ -41,12 +97,30 @@ namespace ProtocolForge
 
         private void Button_Help(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("跳转TCPIP的帮助论坛");
+            System.Windows.MessageBox.Show("跳转TCPIP的帮助论坛");
         }
 
         private void Border_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
 
+        }
+
+        private void Frame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
+
+        private void RibbonWindow_Closed(object sender, EventArgs e)
+        {
+            
+          
+        }
+
+        private void RibbonWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            this.WindowState = WindowState.Minimized;
+            e.Cancel = true;
         }
     }
 }

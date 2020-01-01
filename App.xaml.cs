@@ -14,6 +14,22 @@ namespace ProtocolForge
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+        }
+
+        protected override void OnDeactivated(EventArgs e)
+        {
+            base.OnDeactivated(e);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+           // this.MainWindow.WindowState = WindowState.Minimized;
+           
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             //ThemeManager.ChangeTheme(Application.Current, "Light,Blue");

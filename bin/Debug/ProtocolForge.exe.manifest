@@ -53,30 +53,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="4994632">
-      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7PfuLv/NbpHnkvpWWNWNhdaaGcn3wG5TPsvcyfYamkw=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="591968">
-      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qCwIg0zu2ltJ8o6TRof3GvIwC9rW3160qdtR9s/uvlY=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Fluent.dll" size="1364480">
       <assemblyIdentity name="Fluent" version="7.0.0.0" publicKeyToken="3E436E32A8C5546F" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -85,6 +61,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>Hj9FYUEe40RURj5ELLcSMfnMK8fL4xkbJ376uxWivME=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Insight.Database.Core.dll" size="457216">
+      <assemblyIdentity name="Insight.Database.Core" version="6.2.11.0" publicKeyToken="F35C6EF87E515AFC" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Xag/ye00oqORmZv9ZuyJYYXceA9/rwKP2EqjwCwdbcA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -113,26 +101,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProtocolForge.exe" size="72144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProtocolForge.exe" size="178640">
       <assemblyIdentity name="ProtocolForge" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kad5yEsBZLOBap9cteaKFYL+FMjX/jT7YotRDijht2U=</dsig:DigestValue>
+        <dsig:DigestValue>o8e9ZSBzg+CYUnZd1adi/FSvvcSRpBR1SxjUjJFg/5k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.EF6.dll" size="186880">
-      <assemblyIdentity name="System.Data.SQLite.EF6" version="1.0.112.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.ValueTuple.dll" size="79208">
+      <assemblyIdentity name="System.ValueTuple" version="4.0.2.0" publicKeyToken="CC7B13FFCD2DDD51" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wUWayIBCj1Du9SR4FNNCQ0eRYvVnDtYwwZ6wHHBTZq4=</dsig:DigestValue>
+        <dsig:DigestValue>4c2JuU6Ii9/Gz4zIYIc1xA1LwNNYDT+SEAIwS2lsYcM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

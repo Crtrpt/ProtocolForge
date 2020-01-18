@@ -1,13 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Input;
 using ProtocolForge.Model;
+using ProtocolForge.Protocol.Tcp.impl;
 using ProtocolForge.Protocol.Tcp.page;
+using ProtocolForge.Repository;
 using ProtocolForge.View.Startup;
 using ProtocolForge.windows;
+using Application = System.Windows.Application;
+using ContextMenu = System.Windows.Controls.ContextMenu;
+using MenuItem = System.Windows.Controls.MenuItem;
+using MessageBox = System.Windows.MessageBox;
 using TcpClient = ProtocolForge.windows.TcpClient;
 
 namespace ProtocolForge
@@ -46,6 +54,8 @@ namespace ProtocolForge
             nIcon.ContextMenu = menu;
         }
 
+        
+
         private void iconClick(object sender, EventArgs e)
         {
             this.WindowState = WindowState.Normal;
@@ -65,7 +75,13 @@ namespace ProtocolForge
             this.WindowStartupLocation= WindowStartupLocation.CenterScreen;
             this.icon();
             this.TreeView1.ItemsSource = App.ConnectRepository.ConnectList;
-   
+            
+            
+            this.TreeView1.MouseDoubleClick += ((s, e) =>
+            {
+                new Thread(c => (c as Connect).Dispatch(c)).Start(TreeView1.SelectedItem);
+            });
+
             Startup p = new Startup();
             p.parentWindows = this;
             this.MainPage.Content = p;
@@ -122,6 +138,47 @@ namespace ProtocolForge
             // 是否开启最小化到托盘
             // this.WindowState = WindowState.Minimized;
             // e.Cancel = true;
+        }
+
+        private void right_click(object sender, MouseButtonEventArgs e)
+        {
+           
+           
+            ContextMenu menu = new ContextMenu();
+            
+            MenuItem closeItem = new MenuItem();
+            
+            closeItem.Header = "关闭";
+            closeItem.DataContext = (sender as TextBlock).DataContext;
+            closeItem.Click += ((e1, s1) =>
+            {
+                var as1 = (MenuItem) e1;
+                MessageBox.Show((as1.DataContext as Connect).ConType.ToString()+(as1.DataContext as Connect).Name.ToString());
+            });
+            
+            MenuItem deleteItem = new MenuItem();
+            
+            deleteItem.Header = "删除";
+            deleteItem.DataContext = (sender as TextBlock).DataContext;
+            deleteItem.Click += ((e1, s1) =>
+            {
+                App.ConnectRepository.Delete( ((MenuItem) e1).DataContext as Connect);
+            });
+        
+            MenuItem copyItem = new MenuItem();
+            
+            copyItem.Header = "复制";
+            copyItem.DataContext = (sender as TextBlock).DataContext;
+            copyItem.Click += ((e1, s1) =>
+            {
+                App.ConnectRepository.Copy( ((MenuItem) e1).DataContext as Connect);
+            });
+            
+            menu.Items.Add(copyItem);
+            menu.Items.Add(closeItem);
+            menu.Items.Add(deleteItem);
+            (sender as TextBlock).ContextMenu = menu;
+
         }
     }
 }

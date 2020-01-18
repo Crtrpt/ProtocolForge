@@ -136,9 +136,9 @@
 
             <TreeView Name="TreeView1" BorderThickness="0">
                 <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate>
-                        <TextBlock Text="111"/>
-                    </HierarchicalDataTemplate>
+                   <DataTemplate>
+                       <TextBlock DataContext="{Binding }" Text="{Binding Path=Name, Mode=TwoWay}"  MouseRightButtonDown="right_click"/>
+                   </DataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
 

@@ -7,7 +7,7 @@ using ProtocolForge.Interface;
 
 namespace ProtocolForge.Protocol.Tcp.impl
 {
-    internal class TcpServerOption:IOption
+    internal class TcpServerOption
     {
         public string Ip { get; }
         public string Port { get; }

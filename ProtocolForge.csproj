@@ -136,6 +136,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ProtocolEnum.cs" />
     <Compile Include="Protocol\COAP\CoapClient.xaml.cs">
       <DependentUpon>CoapClient.xaml</DependentUpon>
     </Compile>

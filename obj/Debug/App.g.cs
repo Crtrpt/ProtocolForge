@@ -76,8 +76,6 @@ namespace ProtocolForge {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
-            SplashScreen splashScreen = new SplashScreen("resources/jungle-forest-l.jpg");
-            splashScreen.Show(true);
             ProtocolForge.App app = new ProtocolForge.App();
             app.InitializeComponent();
             app.Run();

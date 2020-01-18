@@ -124,6 +124,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Interface\IOption.cs" />
     <Compile Include="Interface\IUdp.cs" />
     <Compile Include="Interface\ITcp.cs" />
     <Compile Include="Model\AbsConnect.cs" />
@@ -157,7 +158,9 @@
       <DependentUpon>MqttClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Protocol\Tcp\impl\TcpclientImpl.cs" />
-    <Compile Include="Protocol\Tcp\impl\TcpserverImpl.cs" />
+    <Compile Include="Protocol\Tcp\impl\TcpclientOption.cs" />
+    <Compile Include="Protocol\Tcp\impl\TcpServerImpl.cs" />
+    <Compile Include="Protocol\Tcp\impl\TcpServerOption.cs" />
     <Compile Include="Protocol\Tcp\page\TcpClientPage.xaml.cs">
       <DependentUpon>TcpClientPage.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,7 @@
     <Compile Include="Protocol\Udp\UdpServer.xaml.cs">
       <DependentUpon>UdpServer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Repository\ConnectRepository.cs" />
     <Compile Include="Repository\IConnectRepository.cs" />
     <Compile Include="View\Config\ConfigPage.xaml.cs">
       <DependentUpon>ConfigPage.xaml</DependentUpon>
@@ -310,9 +314,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="Resources\Jungle-Forest-l.jpg">
+    <Resource Include="Resources\Jungle-Forest-l.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </SplashScreen>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

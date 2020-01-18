@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using ProtocolForge.Repository;
 
 namespace ProtocolForge
 {
@@ -30,8 +31,10 @@ namespace ProtocolForge
            
         }
 
+        public static  ConnectRepository ConnectRepository=new ConnectRepository();
         protected override void OnStartup(StartupEventArgs e)
         {
+            ConnectRepository.Invoke();
             //ThemeManager.ChangeTheme(Application.Current, "Light,Blue");
             base.OnStartup(e);
         }

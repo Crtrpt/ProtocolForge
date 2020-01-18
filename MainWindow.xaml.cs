@@ -64,7 +64,8 @@ namespace ProtocolForge
             this.InitializeComponent();
             this.WindowStartupLocation= WindowStartupLocation.CenterScreen;
             this.icon();
-            this.TreeView1.ItemsSource = connectList;
+            this.TreeView1.ItemsSource = App.ConnectRepository.ConnectList;
+   
             Startup p = new Startup();
             p.parentWindows = this;
             this.MainPage.Content = p;
@@ -118,9 +119,9 @@ namespace ProtocolForge
 
         private void RibbonWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
-            this.WindowState = WindowState.Minimized;
-            e.Cancel = true;
+            // 是否开启最小化到托盘
+            // this.WindowState = WindowState.Minimized;
+            // e.Cancel = true;
         }
     }
 }

@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\Admin\source\repos\ProtocolForge\App.xaml
 18433320303
 2-865652846
-321359680702
+36-1519282261
 752031988423
 MainWindow.xaml;Protocol\COAP\CoapClient.xaml;Protocol\COAP\CoapServer.xaml;Protocol\HTTP2\Http2Client.xaml;Protocol\HTTP2\Http2Server.xaml;Protocol\HTTP\HttpClient.xaml;Protocol\HTTP\HttpServer.xaml;Protocol\MQTT\MqttClient.xaml;Protocol\Tcp\page\TcpClientPage.xaml;Protocol\Tcp\TcpClient.xaml;Protocol\Websocket\WebSocketClient.xaml;Protocol\MQTT\MqttServer.xaml;Protocol\Websocket\WebSocketServer.xaml;Protocol\Tcp\TcpServer.xaml;Protocol\Udp\UdpClient.xaml;Protocol\Udp\UdpServer.xaml;View\Config\ConfigPage.xaml;View\Startup\Startup.xaml;
-resources\jungle-forest-l.jpg
+
 False
 

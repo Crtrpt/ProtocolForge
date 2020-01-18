@@ -135,12 +135,11 @@
             </Grid.ColumnDefinitions>
 
             <TreeView Name="TreeView1" BorderThickness="0">
-                <TreeViewItem Header="TCP客户端" IsExpanded="False">
-
-                </TreeViewItem>
-                <TreeViewItem Header="TCP服务器端" IsExpanded="False">
-
-                </TreeViewItem>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate>
+                        <TextBlock Text="111"/>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
             </TreeView>
 
             <GridSplitter Grid.Column="1" Width="1" HorizontalAlignment="Stretch" />
